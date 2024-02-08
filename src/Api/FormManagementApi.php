@@ -167,33 +167,6 @@ class ListFormsOptions
         return $this;
     }
     /**
-      * $state The state of the form content
-      * @var ?string
-      */
-    protected ?string $state = null;
-
-    /**
-     * Gets state
-     *
-     * @return ?string
-     */
-    public function getState(): ?string
-    {
-        return $this->state;
-    }
-
-    /**
-     * Sets state
-     * @param ?string $state The state of the form content
-     *
-     * @return self
-     */
-    public function setState(?string $state): self
-    {
-        $this->state = $state;
-        return $this;
-    }
-    /**
       * $sort_by Sort result set in mentioned sort property:order. Default is lastModifiedDateTime:desc. Default sort is descending if not mentioned.
       * @var ?string
       */
@@ -536,10 +509,6 @@ class FormManagementApi
         if ($account_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $account_id when calling listForms');
         }
-        if ($options != null && !is_null($options->getstate()) &&(strlen($options->getstate()) > 15)) {
-            throw new \InvalidArgumentException('invalid length for "$state" when calling FormManagementApi.listForms, must be smaller than or equal to 15.');
-        }
-
         if ($options != null && !is_null($options->getsortBy()) &&(strlen($options->getsortBy()) > 50)) {
             throw new \InvalidArgumentException('invalid length for "$sort_by" when calling FormManagementApi.listForms, must be smaller than or equal to 50.');
         }
@@ -562,9 +531,6 @@ class FormManagementApi
             }
             if ($options->getIsPublished() != 'null') {
                 $queryParams['is_published'] = $this->apiClient->getSerializer()->toQueryValue($options->getIsPublished());
-            }
-            if ($options->getState() != 'null') {
-                $queryParams['state'] = $this->apiClient->getSerializer()->toQueryValue($options->getState());
             }
             if ($options->getSortBy() != 'null') {
                 $queryParams['sort_by'] = $this->apiClient->getSerializer()->toQueryValue($options->getSortBy());
