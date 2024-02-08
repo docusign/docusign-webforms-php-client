@@ -79,9 +79,7 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
         'last_disabled_date_time' => '?string',
         'last_sender_consent_date_time' => '?string',
         'published_slug' => '?string',
-        'published_component_names' => '\DocuSign\WebForms\Model\WebFormPublishedNames',
-        'adm_model_namespace' => '?string',
-        'adm_model_version' => '?string'
+        'published_component_names' => 'map[string,\DocuSign\WebForms\Model\WebFormComponentType]'
     ];
 
     /**
@@ -109,9 +107,7 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
         'last_disabled_date_time' => 'date-time',
         'last_sender_consent_date_time' => 'date-time',
         'published_slug' => null,
-        'published_component_names' => null,
-        'adm_model_namespace' => null,
-        'adm_model_version' => null
+        'published_component_names' => null
     ];
 
     /**
@@ -160,9 +156,7 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
         'last_disabled_date_time' => 'lastDisabledDateTime',
         'last_sender_consent_date_time' => 'lastSenderConsentDateTime',
         'published_slug' => 'publishedSlug',
-        'published_component_names' => 'publishedComponentNames',
-        'adm_model_namespace' => 'admModelNamespace',
-        'adm_model_version' => 'admModelVersion'
+        'published_component_names' => 'publishedComponentNames'
     ];
 
     /**
@@ -190,9 +184,7 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
         'last_disabled_date_time' => 'setLastDisabledDateTime',
         'last_sender_consent_date_time' => 'setLastSenderConsentDateTime',
         'published_slug' => 'setPublishedSlug',
-        'published_component_names' => 'setPublishedComponentNames',
-        'adm_model_namespace' => 'setAdmModelNamespace',
-        'adm_model_version' => 'setAdmModelVersion'
+        'published_component_names' => 'setPublishedComponentNames'
     ];
 
     /**
@@ -220,9 +212,7 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
         'last_disabled_date_time' => 'getLastDisabledDateTime',
         'last_sender_consent_date_time' => 'getLastSenderConsentDateTime',
         'published_slug' => 'getPublishedSlug',
-        'published_component_names' => 'getPublishedComponentNames',
-        'adm_model_namespace' => 'getAdmModelNamespace',
-        'adm_model_version' => 'getAdmModelVersion'
+        'published_component_names' => 'getPublishedComponentNames'
     ];
 
     /**
@@ -305,8 +295,6 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
         $this->container['last_sender_consent_date_time'] = isset($data['last_sender_consent_date_time']) ? $data['last_sender_consent_date_time'] : null;
         $this->container['published_slug'] = isset($data['published_slug']) ? $data['published_slug'] : null;
         $this->container['published_component_names'] = isset($data['published_component_names']) ? $data['published_component_names'] : null;
-        $this->container['adm_model_namespace'] = isset($data['adm_model_namespace']) ? $data['adm_model_namespace'] : null;
-        $this->container['adm_model_version'] = isset($data['adm_model_version']) ? $data['adm_model_version'] : null;
     }
 
     /**
@@ -792,7 +780,7 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
     /**
      * Gets published_component_names
      *
-     * @return \DocuSign\WebForms\Model\WebFormPublishedNames
+     * @return map[string,\DocuSign\WebForms\Model\WebFormComponentType]
      */
     public function getPublishedComponentNames()
     {
@@ -802,61 +790,13 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets published_component_names
      *
-     * @param \DocuSign\WebForms\Model\WebFormPublishedNames $published_component_names A dictionary containing the mapping of component names to their respective component types for all the published components.
+     * @param map[string,\DocuSign\WebForms\Model\WebFormComponentType] $published_component_names A dictionary containing the mapping of component names to their respective component types for all the published components.
      *
      * @return $this
      */
     public function setPublishedComponentNames($published_component_names)
     {
         $this->container['published_component_names'] = $published_component_names;
-
-        return $this;
-    }
-
-    /**
-     * Gets adm_model_namespace
-     *
-     * @return ?string
-     */
-    public function getAdmModelNamespace()
-    {
-        return $this->container['adm_model_namespace'];
-    }
-
-    /**
-     * Sets adm_model_namespace
-     *
-     * @param ?string $adm_model_namespace The namespace of a published web form. The namespace does not include version.
-     *
-     * @return $this
-     */
-    public function setAdmModelNamespace($adm_model_namespace)
-    {
-        $this->container['adm_model_namespace'] = $adm_model_namespace;
-
-        return $this;
-    }
-
-    /**
-     * Gets adm_model_version
-     *
-     * @return ?string
-     */
-    public function getAdmModelVersion()
-    {
-        return $this->container['adm_model_version'];
-    }
-
-    /**
-     * Sets adm_model_version
-     *
-     * @param ?string $adm_model_version The namespace version of a published web form. We bump up minor version only when a form is published.
-     *
-     * @return $this
-     */
-    public function setAdmModelVersion($adm_model_version)
-    {
-        $this->container['adm_model_version'] = $adm_model_version;
 
         return $this;
     }

@@ -60,7 +60,7 @@ class WebFormContent implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'components' => '\DocuSign\WebForms\Model\WebFormComponentsMap',
+        'components' => 'map[string,map[string,object]]',
         'is_standalone' => 'bool',
         'brand_id' => '?string',
         'templates' => '\DocuSign\WebForms\Model\TemplateProperties[]'
@@ -228,7 +228,7 @@ class WebFormContent implements ModelInterface, ArrayAccess
     /**
      * Gets components
      *
-     * @return \DocuSign\WebForms\Model\WebFormComponentsMap
+     * @return map[string,map[string,object]]
      */
     public function getComponents()
     {
@@ -238,7 +238,7 @@ class WebFormContent implements ModelInterface, ArrayAccess
     /**
      * Sets components
      *
-     * @param \DocuSign\WebForms\Model\WebFormComponentsMap $components Key/value dictionary of components that represent the form
+     * @param map[string,map[string,object]] $components Key/value dictionary of components that represent the form
      *
      * @return $this
      */
