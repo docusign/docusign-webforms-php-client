@@ -58,7 +58,7 @@ class WebForm extends WebFormSummary
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'version_id' => '\DocuSign\WebForms\Model\WebFormVersionId',
+        'version_id' => 'int',
         'form_content' => '\DocuSign\WebForms\Model\WebFormContent'
     ];
 
@@ -210,7 +210,7 @@ class WebForm extends WebFormSummary
     /**
      * Gets version_id
      *
-     * @return \DocuSign\WebForms\Model\WebFormVersionId
+     * @return int
      */
     public function getVersionId()
     {
@@ -220,7 +220,7 @@ class WebForm extends WebFormSummary
     /**
      * Sets version_id
      *
-     * @param \DocuSign\WebForms\Model\WebFormVersionId $version_id version_id
+     * @param int $version_id version_id
      *
      * @return $this
      */
