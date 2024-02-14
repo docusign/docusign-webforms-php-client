@@ -63,7 +63,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'form_values' => '\DocuSign\WebForms\Model\WebFormValues',
         'client_user_id' => '?string',
         'authentication_instant' => '?string',
-        'authentication_method' => '?string',
+        'authentication_method' => '\DocuSign\WebForms\Model\AuthenticationMethod',
         'assertion_id' => '?string',
         'security_domain' => '?string',
         'return_url' => '?string',
@@ -333,7 +333,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets authentication_method
      *
-     * @return ?string
+     * @return \DocuSign\WebForms\Model\AuthenticationMethod
      */
     public function getAuthenticationMethod()
     {
@@ -343,7 +343,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets authentication_method
      *
-     * @param ?string $authentication_method authentication_method
+     * @param \DocuSign\WebForms\Model\AuthenticationMethod $authentication_method authentication_method
      *
      * @return $this
      */
