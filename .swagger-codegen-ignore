@@ -44,6 +44,3 @@ test/
 src/ApiClient.php	
 src/ApiException.php
 src/Client/
-
-# This will be ignored until the Parent Scope reference issue is fixed against DCM-11098
-src/Model/WebFormValues.php

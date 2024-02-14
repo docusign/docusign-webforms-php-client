@@ -29,8 +29,6 @@
  */
 
 namespace DocuSign\WebForms\Model;
-
-use \ArrayAccess;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
@@ -43,240 +41,56 @@ use DocuSign\WebForms\ObjectSerializer;
  * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AuthenticationMethod implements ModelInterface, ArrayAccess
+class AuthenticationMethod
 {
-    const DISCRIMINATOR = null;
-
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
-    protected static $swaggerModelName = 'AuthenticationMethod';
-
-    /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
-    protected static $swaggerTypes = [
-        
-    ];
-
-    /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
-    protected static $swaggerFormats = [
-        
-    ];
-
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
+     * Possible values of this enum
      */
-    public static function swaggerTypes()
-    {
-        return self::$swaggerTypes;
-    }
-
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function swaggerFormats()
-    {
-        return self::$swaggerFormats;
-    }
-
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @var string[]
-     */
-    protected static $attributeMap = [
-        
-    ];
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @var string[]
-     */
-    protected static $setters = [
-        
-    ];
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @var string[]
-     */
-    protected static $getters = [
-        
-    ];
-
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return self::$attributeMap;
-    }
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$swaggerModelName;
-    }
-
+    const BIOMETRIC = 'Biometric';
+    const EMAIL = 'Email';
+    const HTTP_BASIC_AUTH = 'HTTPBasicAuth';
+    const KERBEROS = 'Kerberos';
+    const KNOWLEDGE_BASED_AUTH = 'KnowledgeBasedAuth';
+    const NONE = 'None';
+    const PAPER_DOCUMENTS = 'PaperDocuments';
+    const PASSWORD = 'Password';
+    const RSA_SECURE_ID = 'RSASecureID';
+    const SINGLE_SIGN_ON_CA_SITEMINDER = 'SingleSignOn_CASiteminder';
+    const SINGLE_SIGN_ON_INFO_CARD = 'SingleSignOn_InfoCard';
+    const SINGLE_SIGN_ON_MICROSOFT_ACTIVE_DIRECTORY = 'SingleSignOn_MicrosoftActiveDirectory';
+    const SINGLE_SIGN_ON_OTHER = 'SingleSignOn_Other';
+    const SINGLE_SIGN_ON_PASSPORT = 'SingleSignOn_Passport';
+    const SINGLE_SIGN_ON_SAML = 'SingleSignOn_SAML';
+    const SMARTCARD = 'Smartcard';
+    const SSL_MUTUAL_AUTH = 'SSLMutualAuth';
+    const X509_CERTIFICATE = 'X509Certificate';
     
-
-    
-
     /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
+     * Gets allowable values of the enum
+     * @return string[]
      */
-    protected $container = [];
-
-    /**
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
-     */
-    public function __construct(array $data = null)
+    public static function getAllowableEnumValues()
     {
-    }
-
-    /**
-     * Show all the invalid properties with reasons.
-     *
-     * @return array invalid properties with reasons
-     */
-    public function listInvalidProperties()
-    {
-        $invalidProperties = [];
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return isset($this->container[$offset]) ? $this->container[$offset] : null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param integer $offset Offset
-     * @param mixed   $value  Value to be set
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(
-                ObjectSerializer::sanitizeForSerialization($this),
-                JSON_PRETTY_PRINT
-            );
-        }
-
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return [
+            self::BIOMETRIC,
+            self::EMAIL,
+            self::HTTP_BASIC_AUTH,
+            self::KERBEROS,
+            self::KNOWLEDGE_BASED_AUTH,
+            self::NONE,
+            self::PAPER_DOCUMENTS,
+            self::PASSWORD,
+            self::RSA_SECURE_ID,
+            self::SINGLE_SIGN_ON_CA_SITEMINDER,
+            self::SINGLE_SIGN_ON_INFO_CARD,
+            self::SINGLE_SIGN_ON_MICROSOFT_ACTIVE_DIRECTORY,
+            self::SINGLE_SIGN_ON_OTHER,
+            self::SINGLE_SIGN_ON_PASSPORT,
+            self::SINGLE_SIGN_ON_SAML,
+            self::SMARTCARD,
+            self::SSL_MUTUAL_AUTH,
+            self::X509_CERTIFICATE,
+        ];
     }
 }
 

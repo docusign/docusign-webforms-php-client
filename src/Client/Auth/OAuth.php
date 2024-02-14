@@ -32,7 +32,7 @@ class OAuth
      *
      * @var string
      */
-    protected $basePath = '';
+    protected $basePath = 'https://apps-d.docusign.com/api/webforms/v1.1';
 
     // OAuth Base path constants
     // Production/Live server base path
@@ -67,11 +67,15 @@ class OAuth
 
         //Derive OAuth Base Path if not given.
         if (substr($this->getBasePath(), 0, 12) === "https://demo"
-            || substr($this->getBasePath(), 0, 11) === "https://demo"
+            || substr($this->getBasePath(), 0, 11) === "http://demo"
+            || substr($this->getBasePath(), 0, 14) === "https://apps-d"
+            || substr($this->getBasePath(), 0, 13) === "http://apps-d"
         ) {
             $this->oAuthBasePath = self::$DEMO_OAUTH_BASE_PATH;
         } elseif (substr($this->getBasePath(), 0, 13) === "https://stage"
             || substr($this->getBasePath(), 0, 12) === "http://stage"
+             || substr($this->getBasePath(), 0, 14) === "https://apps-s"
+            || substr($this->getBasePath(), 0, 13) === "http://apps-s"
         ) {
             $this->oAuthBasePath = self::$STAGE_OAUTH_BASE_PATH;
         } else {
