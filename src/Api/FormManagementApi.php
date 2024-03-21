@@ -402,7 +402,7 @@ class FormManagementApi
         }
 
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/forms/{form_id}";
+        $resourcePath = "/accounts/{accountId}/forms/{formId}";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -418,11 +418,11 @@ class FormManagementApi
 
         // path params
         if ($account_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "account_id", $account_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
         }
         // path params
         if ($form_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "form_id", $form_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "formId", $form_id);
         }
 
         // default format to json
@@ -447,7 +447,7 @@ class FormManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebForm',
-                '/accounts/{account_id}/forms/{form_id}'
+                '/accounts/{accountId}/forms/{formId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebForm', $httpHeader), $statusCode, $httpHeader];
@@ -514,7 +514,7 @@ class FormManagementApi
         }
 
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/forms";
+        $resourcePath = "/accounts/{accountId}/forms";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -548,7 +548,7 @@ class FormManagementApi
 
         // path params
         if ($account_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "account_id", $account_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
         }
 
         // default format to json
@@ -573,7 +573,7 @@ class FormManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormSummaryList',
-                '/accounts/{account_id}/forms'
+                '/accounts/{accountId}/forms'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormSummaryList', $httpHeader), $statusCode, $httpHeader];

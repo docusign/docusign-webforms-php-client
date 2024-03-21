@@ -199,7 +199,7 @@ class FormInstanceManagementApi
             throw new \InvalidArgumentException('Missing the required parameter $create_instance_body when calling createInstance');
         }
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/forms/{form_id}/instances";
+        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -208,11 +208,11 @@ class FormInstanceManagementApi
 
         // path params
         if ($account_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "account_id", $account_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
         }
         // path params
         if ($form_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "form_id", $form_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "formId", $form_id);
         }
 
         // default format to json
@@ -242,7 +242,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstance',
-                '/accounts/{account_id}/forms/{form_id}/instances'
+                '/accounts/{accountId}/forms/{formId}/instances'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstance', $httpHeader), $statusCode, $httpHeader];
@@ -327,7 +327,7 @@ class FormInstanceManagementApi
             throw new \InvalidArgumentException('Missing the required parameter $instance_id when calling getInstance');
         }
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}";
+        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -336,15 +336,15 @@ class FormInstanceManagementApi
 
         // path params
         if ($account_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "account_id", $account_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
         }
         // path params
         if ($form_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "form_id", $form_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "formId", $form_id);
         }
         // path params
         if ($instance_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "instance_id", $instance_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "instanceId", $instance_id);
         }
 
         // default format to json
@@ -369,7 +369,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstance',
-                '/accounts/{account_id}/forms/{form_id}/instances/{instance_id}'
+                '/accounts/{accountId}/forms/{formId}/instances/{instanceId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstance', $httpHeader), $statusCode, $httpHeader];
@@ -450,7 +450,7 @@ class FormInstanceManagementApi
         }
 
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/forms/{form_id}/instances";
+        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -466,11 +466,11 @@ class FormInstanceManagementApi
 
         // path params
         if ($account_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "account_id", $account_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
         }
         // path params
         if ($form_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "form_id", $form_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "formId", $form_id);
         }
 
         // default format to json
@@ -495,7 +495,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstanceList',
-                '/accounts/{account_id}/forms/{form_id}/instances'
+                '/accounts/{accountId}/forms/{formId}/instances'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstanceList', $httpHeader), $statusCode, $httpHeader];
@@ -576,7 +576,7 @@ class FormInstanceManagementApi
             throw new \InvalidArgumentException('Missing the required parameter $instance_id when calling refreshToken');
         }
         // parse inputs
-        $resourcePath = "/accounts/{account_id}/forms/{form_id}/instances/{instance_id}/refresh";
+        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -585,15 +585,15 @@ class FormInstanceManagementApi
 
         // path params
         if ($account_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "account_id", $account_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "accountId", $account_id);
         }
         // path params
         if ($form_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "form_id", $form_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "formId", $form_id);
         }
         // path params
         if ($instance_id !== null) {
-            $resourcePath = self::updateResourcePath($resourcePath, "instance_id", $instance_id);
+            $resourcePath = self::updateResourcePath($resourcePath, "instanceId", $instance_id);
         }
 
         // default format to json
@@ -618,7 +618,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstance',
-                '/accounts/{account_id}/forms/{form_id}/instances/{instance_id}/refresh'
+                '/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstance', $httpHeader), $statusCode, $httpHeader];
