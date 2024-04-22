@@ -1,3 +1,8 @@
+## [v1.0.1] - WebForms API v1.1.0-1.0.3 - 2024-04-22
+### Changed
+- Adjusted the minimum required firebase/php-jwt package version to 6.0.
+- Updated the SDK release version.
+
 ## [v1.0.1-rc1] - WebForms API v1.1.0-1.0.3 - 2024-03-19
 ### Changed
 - Adjusted the minimum required firebase/php-jwt package version to 6.0.
