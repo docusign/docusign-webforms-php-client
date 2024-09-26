@@ -1,6 +1,6 @@
 <?php
 /**
- * InstanceStatus
+ * WebFormType
  *
  * PHP version 7.4
  *
@@ -32,25 +32,22 @@ namespace DocuSign\WebForms\Model;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
- * InstanceStatus Class Doc Comment
+ * WebFormType Class Doc Comment
  *
  * @category    Class
- * @description The status of Web Form Instance. If the form status is INITIATED, it means the form is accessible until it is submitted or expired. If the form status is SUBMITTED, it means the form is submitted already and hence, cannot be opened again.
+ * @description The field indicates webform type.
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InstanceStatus
+class WebFormType
 {
     /**
      * Possible values of this enum
      */
-    const INITIATED = 'INITIATED';
-    const IN_PROGRESS = 'IN_PROGRESS';
-    const SUBMITTED = 'SUBMITTED';
-    const EXPIRED = 'EXPIRED';
-    const FAILED = 'FAILED';
+    const STANDALONE = 'standalone';
+    const HAS_ESIGN_TEMPLATE = 'hasEsignTemplate';
     
     /**
      * Gets allowable values of the enum
@@ -59,11 +56,8 @@ class InstanceStatus
     public static function getAllowableEnumValues()
     {
         return [
-            self::INITIATED,
-            self::IN_PROGRESS,
-            self::SUBMITTED,
-            self::EXPIRED,
-            self::FAILED,
+            self::STANDALONE,
+            self::HAS_ESIGN_TEMPLATE,
         ];
     }
 }

@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @description An object that summarizes an instance of a form that can be used to display a listing
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class WebFormSummary implements ModelInterface, ArrayAccess
@@ -64,6 +64,7 @@ class WebFormSummary implements ModelInterface, ArrayAccess
         'account_id' => '?string',
         'is_published' => '?bool',
         'is_enabled' => '?bool',
+        'is_uploaded' => '?bool',
         'has_draft_changes' => '?bool',
         'form_state' => '\DocuSign\WebForms\Model\WebFormState',
         'form_properties' => '\DocuSign\WebForms\Model\WebFormProperties',
@@ -80,6 +81,7 @@ class WebFormSummary implements ModelInterface, ArrayAccess
         'account_id' => null,
         'is_published' => null,
         'is_enabled' => null,
+        'is_uploaded' => null,
         'has_draft_changes' => null,
         'form_state' => null,
         'form_properties' => null,
@@ -117,6 +119,7 @@ class WebFormSummary implements ModelInterface, ArrayAccess
         'account_id' => 'accountId',
         'is_published' => 'isPublished',
         'is_enabled' => 'isEnabled',
+        'is_uploaded' => 'isUploaded',
         'has_draft_changes' => 'hasDraftChanges',
         'form_state' => 'formState',
         'form_properties' => 'formProperties',
@@ -133,6 +136,7 @@ class WebFormSummary implements ModelInterface, ArrayAccess
         'account_id' => 'setAccountId',
         'is_published' => 'setIsPublished',
         'is_enabled' => 'setIsEnabled',
+        'is_uploaded' => 'setIsUploaded',
         'has_draft_changes' => 'setHasDraftChanges',
         'form_state' => 'setFormState',
         'form_properties' => 'setFormProperties',
@@ -149,6 +153,7 @@ class WebFormSummary implements ModelInterface, ArrayAccess
         'account_id' => 'getAccountId',
         'is_published' => 'getIsPublished',
         'is_enabled' => 'getIsEnabled',
+        'is_uploaded' => 'getIsUploaded',
         'has_draft_changes' => 'getHasDraftChanges',
         'form_state' => 'getFormState',
         'form_properties' => 'getFormProperties',
@@ -219,6 +224,7 @@ class WebFormSummary implements ModelInterface, ArrayAccess
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['is_published'] = isset($data['is_published']) ? $data['is_published'] : null;
         $this->container['is_enabled'] = isset($data['is_enabled']) ? $data['is_enabled'] : null;
+        $this->container['is_uploaded'] = isset($data['is_uploaded']) ? $data['is_uploaded'] : null;
         $this->container['has_draft_changes'] = isset($data['has_draft_changes']) ? $data['has_draft_changes'] : null;
         $this->container['form_state'] = isset($data['form_state']) ? $data['form_state'] : null;
         $this->container['form_properties'] = isset($data['form_properties']) ? $data['form_properties'] : null;
@@ -341,6 +347,30 @@ class WebFormSummary implements ModelInterface, ArrayAccess
     public function setIsEnabled($is_enabled)
     {
         $this->container['is_enabled'] = $is_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_uploaded
+     *
+     * @return ?bool
+     */
+    public function getIsUploaded()
+    {
+        return $this->container['is_uploaded'];
+    }
+
+    /**
+     * Sets is_uploaded
+     *
+     * @param ?bool $is_uploaded Has the form created through upload
+     *
+     * @return $this
+     */
+    public function setIsUploaded($is_uploaded)
+    {
+        $this->container['is_uploaded'] = $is_uploaded;
 
         return $this;
     }

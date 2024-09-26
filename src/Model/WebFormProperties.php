@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @description General information about the web form that is consistent across versions
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class WebFormProperties implements ModelInterface, ArrayAccess

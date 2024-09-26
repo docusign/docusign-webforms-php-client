@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @description Form metadata
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class WebFormMetadata implements ModelInterface, ArrayAccess
@@ -61,6 +61,8 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'source' => '\DocuSign\WebForms\Model\WebFormSource',
+        'type' => '\DocuSign\WebForms\Model\WebFormType',
+        'source_form_id' => '?string',
         'owner' => '\DocuSign\WebForms\Model\WebFormUserInfo',
         'sender' => '\DocuSign\WebForms\Model\WebFormUserInfo',
         'last_modified_by' => '\DocuSign\WebForms\Model\WebFormUserInfo',
@@ -89,6 +91,8 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'source' => null,
+        'type' => null,
+        'source_form_id' => null,
         'owner' => null,
         'sender' => null,
         'last_modified_by' => null,
@@ -138,6 +142,8 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'source' => 'source',
+        'type' => 'type',
+        'source_form_id' => 'sourceFormId',
         'owner' => 'owner',
         'sender' => 'sender',
         'last_modified_by' => 'lastModifiedBy',
@@ -166,6 +172,8 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'source' => 'setSource',
+        'type' => 'setType',
+        'source_form_id' => 'setSourceFormId',
         'owner' => 'setOwner',
         'sender' => 'setSender',
         'last_modified_by' => 'setLastModifiedBy',
@@ -194,6 +202,8 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'source' => 'getSource',
+        'type' => 'getType',
+        'source_form_id' => 'getSourceFormId',
         'owner' => 'getOwner',
         'sender' => 'getSender',
         'last_modified_by' => 'getLastModifiedBy',
@@ -276,6 +286,8 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['source_form_id'] = isset($data['source_form_id']) ? $data['source_form_id'] : null;
         $this->container['owner'] = isset($data['owner']) ? $data['owner'] : null;
         $this->container['sender'] = isset($data['sender']) ? $data['sender'] : null;
         $this->container['last_modified_by'] = isset($data['last_modified_by']) ? $data['last_modified_by'] : null;
@@ -334,13 +346,61 @@ class WebFormMetadata implements ModelInterface, ArrayAccess
     /**
      * Sets source
      *
-     * @param \DocuSign\WebForms\Model\WebFormSource $source The source from which the webform is created. Accepted values are [upload, templates, blank]
+     * @param \DocuSign\WebForms\Model\WebFormSource $source The source from which the webform is created. Accepted values are [templates, blank, form]
      *
      * @return $this
      */
     public function setSource($source)
     {
         $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return \DocuSign\WebForms\Model\WebFormType
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \DocuSign\WebForms\Model\WebFormType $type Represents webform type. Possible values are [standalone, hasEsignTemplate]
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_form_id
+     *
+     * @return ?string
+     */
+    public function getSourceFormId()
+    {
+        return $this->container['source_form_id'];
+    }
+
+    /**
+     * Sets source_form_id
+     *
+     * @param ?string $source_form_id The source form id from which the webform is created.
+     *
+     * @return $this
+     */
+    public function setSourceFormId($source_form_id)
+    {
+        $this->container['source_form_id'] = $source_form_id;
 
         return $this;
     }

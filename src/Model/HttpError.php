@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -40,7 +40,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @description An error occurred while processing a request. Source - https://www.baeldung.com/rest-api-error-handling-best-practices
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class HttpError implements ModelInterface, ArrayAccess

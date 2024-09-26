@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -38,7 +38,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @description The method through which form instance is created.
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class InstanceSource
@@ -50,6 +50,7 @@ class InstanceSource
     const API_EMBEDDED = 'API_EMBEDDED';
     const API_REMOTE = 'API_REMOTE';
     const UI_REMOTE = 'UI_REMOTE';
+    const WORKFLOW = 'WORKFLOW';
     
     /**
      * Gets allowable values of the enum
@@ -62,6 +63,7 @@ class InstanceSource
             self::API_EMBEDDED,
             self::API_REMOTE,
             self::UI_REMOTE,
+            self::WORKFLOW,
         ];
     }
 }

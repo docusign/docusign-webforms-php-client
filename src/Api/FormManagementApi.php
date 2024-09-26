@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ namespace DocuSign\WebForms\Api\FormManagementApi;
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class GetFormOptions
@@ -80,7 +80,7 @@ class GetFormOptions
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ListFormsOptions
@@ -291,7 +291,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class FormManagementApi
@@ -402,7 +402,7 @@ class FormManagementApi
         }
 
         // parse inputs
-        $resourcePath = "/accounts/{accountId}/forms/{formId}";
+        $resourcePath = "/v1.1/accounts/{accountId}/forms/{formId}";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -447,7 +447,7 @@ class FormManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebForm',
-                '/accounts/{accountId}/forms/{formId}'
+                '/v1.1/accounts/{accountId}/forms/{formId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebForm', $httpHeader), $statusCode, $httpHeader];
@@ -514,7 +514,7 @@ class FormManagementApi
         }
 
         // parse inputs
-        $resourcePath = "/accounts/{accountId}/forms";
+        $resourcePath = "/v1.1/accounts/{accountId}/forms";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -573,7 +573,7 @@ class FormManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormSummaryList',
-                '/accounts/{accountId}/forms'
+                '/v1.1/accounts/{accountId}/forms'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormSummaryList', $httpHeader), $statusCode, $httpHeader];
