@@ -7,7 +7,7 @@
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -38,7 +38,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @description The source from which the web form is created.
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
- * @license     The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
 class WebFormSource
@@ -48,6 +48,7 @@ class WebFormSource
      */
     const TEMPLATES = 'templates';
     const BLANK = 'blank';
+    const FORM = 'form';
     
     /**
      * Gets allowable values of the enum
@@ -58,6 +59,7 @@ class WebFormSource
         return [
             self::TEMPLATES,
             self::BLANK,
+            self::FORM,
         ];
     }
 }

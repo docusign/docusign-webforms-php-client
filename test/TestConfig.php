@@ -98,7 +98,7 @@ class TestConfig
 
     public function __construct($integratorKey = null, $host = null, $returnUrl = null, $envelopeId = null, $secret = null, $key = null, $userId = null, $privateKey = null)
     {
-        $this->host = !empty($host) ? $host : 'https://demo.services.docusign.net/webforms/v1.1';
+        $this->host = !empty($host) ? $host : 'https://demo.services.docusign.net/webforms';
         $this->integratorKey = !empty($integratorKey) ? $integratorKey : getenv('INTEGRATOR_KEY');
         $this->clientSecret = !empty($secret) ? $secret : getenv('CLIENT_SECRET');
         $this->clientKey = !empty($key) ? $key : 'Docs/private.pem';

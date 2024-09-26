@@ -9,7 +9,7 @@ declare(strict_types=1);
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 
@@ -39,7 +39,7 @@ namespace DocuSign\WebForms\Api\FormInstanceManagementApi;
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class ListInstancesOptions
@@ -88,7 +88,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @category Class
  * @package  DocuSign\WebForms
  * @author   Swagger Codegen team <apihelp@docusign.com>
- * @license  The DocuSign PHP Client SDK is licensed under the MIT License.
+ * @license  The Docusign PHP Client SDK is licensed under the MIT License.
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class FormInstanceManagementApi
@@ -199,7 +199,7 @@ class FormInstanceManagementApi
             throw new \InvalidArgumentException('Missing the required parameter $create_instance_body when calling createInstance');
         }
         // parse inputs
-        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances";
+        $resourcePath = "/v1.1/accounts/{accountId}/forms/{formId}/instances";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -242,7 +242,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstance',
-                '/accounts/{accountId}/forms/{formId}/instances'
+                '/v1.1/accounts/{accountId}/forms/{formId}/instances'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstance', $httpHeader), $statusCode, $httpHeader];
@@ -327,7 +327,7 @@ class FormInstanceManagementApi
             throw new \InvalidArgumentException('Missing the required parameter $instance_id when calling getInstance');
         }
         // parse inputs
-        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
+        $resourcePath = "/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -369,7 +369,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstance',
-                '/accounts/{accountId}/forms/{formId}/instances/{instanceId}'
+                '/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstance', $httpHeader), $statusCode, $httpHeader];
@@ -450,7 +450,7 @@ class FormInstanceManagementApi
         }
 
         // parse inputs
-        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances";
+        $resourcePath = "/v1.1/accounts/{accountId}/forms/{formId}/instances";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -495,7 +495,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstanceList',
-                '/accounts/{accountId}/forms/{formId}/instances'
+                '/v1.1/accounts/{accountId}/forms/{formId}/instances'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstanceList', $httpHeader), $statusCode, $httpHeader];
@@ -576,7 +576,7 @@ class FormInstanceManagementApi
             throw new \InvalidArgumentException('Missing the required parameter $instance_id when calling refreshToken');
         }
         // parse inputs
-        $resourcePath = "/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
+        $resourcePath = "/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh";
         $httpBody = $_tempBody ?? ''; // $_tempBody is the method argument, if present
         $queryParams = $headerParams = $formParams = [];
         $headerParams['Accept'] ??= $this->apiClient->selectHeaderAccept(['application/json']);
@@ -618,7 +618,7 @@ class FormInstanceManagementApi
                 $httpBody,
                 $headerParams,
                 '\DocuSign\WebForms\Model\WebFormInstance',
-                '/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh'
+                '/v1.1/accounts/{accountId}/forms/{formId}/instances/{instanceId}/refresh'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\DocuSign\WebForms\Model\WebFormInstance', $httpHeader), $statusCode, $httpHeader];
