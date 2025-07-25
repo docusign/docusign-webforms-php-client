@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFormInstanceEnvelopes
+ * WebFormInstanceRecipients
  *
  * PHP version 7.4
  *
@@ -34,7 +34,7 @@ use \ArrayAccess;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
- * WebFormInstanceEnvelopes Class Doc Comment
+ * WebFormInstanceRecipients Class Doc Comment
  *
  * @category    Class
  * @package     DocuSign\WebForms
@@ -42,7 +42,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
+class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'WebFormInstance_envelopes';
+    protected static $swaggerModelName = 'WebFormInstance_recipients';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => '?string',
-        'created_date_time' => '?string'
+        'recipient_view_id' => '\DocuSign\WebForms\Model\RecipientViewId',
+        'instance_recipient_status' => '\DocuSign\WebForms\Model\InstanceRecipientStatus'
     ];
 
     /**
@@ -69,8 +69,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'created_date_time' => 'date-time'
+        'recipient_view_id' => null,
+        'instance_recipient_status' => null
     ];
 
     /**
@@ -100,8 +100,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'created_date_time' => 'createdDateTime'
+        'recipient_view_id' => 'recipientViewId',
+        'instance_recipient_status' => 'instanceRecipientStatus'
     ];
 
     /**
@@ -110,8 +110,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'created_date_time' => 'setCreatedDateTime'
+        'recipient_view_id' => 'setRecipientViewId',
+        'instance_recipient_status' => 'setInstanceRecipientStatus'
     ];
 
     /**
@@ -120,8 +120,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'created_date_time' => 'getCreatedDateTime'
+        'recipient_view_id' => 'getRecipientViewId',
+        'instance_recipient_status' => 'getInstanceRecipientStatus'
     ];
 
     /**
@@ -184,8 +184,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['created_date_time'] = isset($data['created_date_time']) ? $data['created_date_time'] : null;
+        $this->container['recipient_view_id'] = isset($data['recipient_view_id']) ? $data['recipient_view_id'] : null;
+        $this->container['instance_recipient_status'] = isset($data['instance_recipient_status']) ? $data['instance_recipient_status'] : null;
     }
 
     /**
@@ -213,49 +213,49 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets recipient_view_id
      *
-     * @return ?string
+     * @return \DocuSign\WebForms\Model\RecipientViewId
      */
-    public function getId()
+    public function getRecipientViewId()
     {
-        return $this->container['id'];
+        return $this->container['recipient_view_id'];
     }
 
     /**
-     * Sets id
+     * Sets recipient_view_id
      *
-     * @param ?string $id id
+     * @param \DocuSign\WebForms\Model\RecipientViewId $recipient_view_id recipient_view_id
      *
      * @return $this
      */
-    public function setId($id)
+    public function setRecipientViewId($recipient_view_id)
     {
-        $this->container['id'] = $id;
+        $this->container['recipient_view_id'] = $recipient_view_id;
 
         return $this;
     }
 
     /**
-     * Gets created_date_time
+     * Gets instance_recipient_status
      *
-     * @return ?string
+     * @return \DocuSign\WebForms\Model\InstanceRecipientStatus
      */
-    public function getCreatedDateTime()
+    public function getInstanceRecipientStatus()
     {
-        return $this->container['created_date_time'];
+        return $this->container['instance_recipient_status'];
     }
 
     /**
-     * Sets created_date_time
+     * Sets instance_recipient_status
      *
-     * @param ?string $created_date_time The dateTime when an envelope is created.
+     * @param \DocuSign\WebForms\Model\InstanceRecipientStatus $instance_recipient_status instance_recipient_status
      *
      * @return $this
      */
-    public function setCreatedDateTime($created_date_time)
+    public function setInstanceRecipientStatus($instance_recipient_status)
     {
-        $this->container['created_date_time'] = $created_date_time;
+        $this->container['instance_recipient_status'] = $instance_recipient_status;
 
         return $this;
     }

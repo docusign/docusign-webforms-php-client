@@ -61,7 +61,8 @@ class WebFormProperties implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => '?string',
-        'is_private_access' => 'bool'
+        'is_private_access' => 'bool',
+        'allow_sending' => '?bool'
     ];
 
     /**
@@ -71,7 +72,8 @@ class WebFormProperties implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'is_private_access' => null
+        'is_private_access' => null,
+        'allow_sending' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class WebFormProperties implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'is_private_access' => 'isPrivateAccess'
+        'is_private_access' => 'isPrivateAccess',
+        'allow_sending' => 'allowSending'
     ];
 
     /**
@@ -112,7 +115,8 @@ class WebFormProperties implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'is_private_access' => 'setIsPrivateAccess'
+        'is_private_access' => 'setIsPrivateAccess',
+        'allow_sending' => 'setAllowSending'
     ];
 
     /**
@@ -122,7 +126,8 @@ class WebFormProperties implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'is_private_access' => 'getIsPrivateAccess'
+        'is_private_access' => 'getIsPrivateAccess',
+        'allow_sending' => 'getAllowSending'
     ];
 
     /**
@@ -187,6 +192,7 @@ class WebFormProperties implements ModelInterface, ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['is_private_access'] = isset($data['is_private_access']) ? $data['is_private_access'] : null;
+        $this->container['allow_sending'] = isset($data['allow_sending']) ? $data['allow_sending'] : null;
     }
 
     /**
@@ -257,6 +263,30 @@ class WebFormProperties implements ModelInterface, ArrayAccess
     public function setIsPrivateAccess($is_private_access)
     {
         $this->container['is_private_access'] = $is_private_access;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_sending
+     *
+     * @return ?bool
+     */
+    public function getAllowSending()
+    {
+        return $this->container['allow_sending'];
+    }
+
+    /**
+     * Sets allow_sending
+     *
+     * @param ?bool $allow_sending When this property is true, form can be used for remote signing.
+     *
+     * @return $this
+     */
+    public function setAllowSending($allow_sending)
+    {
+        $this->container['allow_sending'] = $allow_sending;
 
         return $this;
     }

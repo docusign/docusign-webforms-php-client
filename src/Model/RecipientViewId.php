@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFormInstanceEnvelopes
+ * RecipientViewId
  *
  * PHP version 7.4
  *
@@ -34,15 +34,16 @@ use \ArrayAccess;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
- * WebFormInstanceEnvelopes Class Doc Comment
+ * RecipientViewId Class Doc Comment
  *
  * @category    Class
+ * @description Recipient View ID of a recipient associated with the Web Form instance
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
+class RecipientViewId implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'WebFormInstance_envelopes';
+    protected static $swaggerModelName = 'RecipientViewId';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +60,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => '?string',
-        'created_date_time' => '?string'
+        
     ];
 
     /**
@@ -69,8 +69,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'created_date_time' => 'date-time'
+        
     ];
 
     /**
@@ -100,8 +99,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'created_date_time' => 'createdDateTime'
+        
     ];
 
     /**
@@ -110,8 +108,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'created_date_time' => 'setCreatedDateTime'
+        
     ];
 
     /**
@@ -120,8 +117,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'created_date_time' => 'getCreatedDateTime'
+        
     ];
 
     /**
@@ -184,8 +180,6 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['created_date_time'] = isset($data['created_date_time']) ? $data['created_date_time'] : null;
     }
 
     /**
@@ -211,54 +205,6 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return ?string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param ?string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets created_date_time
-     *
-     * @return ?string
-     */
-    public function getCreatedDateTime()
-    {
-        return $this->container['created_date_time'];
-    }
-
-    /**
-     * Sets created_date_time
-     *
-     * @param ?string $created_date_time The dateTime when an envelope is created.
-     *
-     * @return $this
-     */
-    public function setCreatedDateTime($created_date_time)
-    {
-        $this->container['created_date_time'] = $created_date_time;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

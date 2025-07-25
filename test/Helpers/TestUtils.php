@@ -6,7 +6,7 @@ use DocuSign\WebForms\Client\ApiClient;
 
 class TestUtils
 {
-    private static $WEBFORMS_SCOPES = ["signature","impersonation",'webforms_read',"webforms_write","webforms_instance_read","webforms_instance_write"];
+    private static $WEBFORMS_SCOPES = ["signature","impersonation",'webforms_read',"webforms_instance_read","webforms_instance_write"];
 
     public static function GetTestConfig(){
         $testConfig = new TestConfig();

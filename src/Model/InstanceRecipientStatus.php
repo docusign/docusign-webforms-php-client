@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFormComponentType
+ * InstanceRecipientStatus
  *
  * PHP version 7.4
  *
@@ -32,28 +32,23 @@ namespace DocuSign\WebForms\Model;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
- * WebFormComponentType Class Doc Comment
+ * InstanceRecipientStatus Class Doc Comment
  *
  * @category    Class
- * @description Type of components used in the web form
+ * @description The current status of the instance for the recipient
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class WebFormComponentType
+class InstanceRecipientStatus
 {
     /**
      * Possible values of this enum
      */
-    const CHECKBOX_GROUP = 'CheckboxGroup';
-    const DATE = 'Date';
-    const EMAIL = 'Email';
-    const NUMBER = 'Number';
-    const RADIO_BUTTON_GROUP = 'RadioButtonGroup';
-    const SELECT = 'Select';
-    const TEXT_BOX = 'TextBox';
-    const FILE_INPUT = 'FileInput';
+    const INITIATED = 'INITIATED';
+    const IN_PROGRESS = 'IN_PROGRESS';
+    const SUBMITTED = 'SUBMITTED';
     
     /**
      * Gets allowable values of the enum
@@ -62,14 +57,9 @@ class WebFormComponentType
     public static function getAllowableEnumValues()
     {
         return [
-            self::CHECKBOX_GROUP,
-            self::DATE,
-            self::EMAIL,
-            self::NUMBER,
-            self::RADIO_BUTTON_GROUP,
-            self::SELECT,
-            self::TEXT_BOX,
-            self::FILE_INPUT,
+            self::INITIATED,
+            self::IN_PROGRESS,
+            self::SUBMITTED,
         ];
     }
 }

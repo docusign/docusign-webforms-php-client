@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFormInstanceEnvelopes
+ * CreateInstanceRequestBodyRecipients
  *
  * PHP version 7.4
  *
@@ -34,7 +34,7 @@ use \ArrayAccess;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
- * WebFormInstanceEnvelopes Class Doc Comment
+ * CreateInstanceRequestBodyRecipients Class Doc Comment
  *
  * @category    Class
  * @package     DocuSign\WebForms
@@ -42,7 +42,7 @@ use DocuSign\WebForms\ObjectSerializer;
  * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
+class CreateInstanceRequestBodyRecipients implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'WebFormInstance_envelopes';
+    protected static $swaggerModelName = 'CreateInstanceRequestBody_recipients';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +59,10 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => '?string',
-        'created_date_time' => '?string'
+        'role_name' => '\DocuSign\WebForms\Model\RoleName',
+        'name' => '\DocuSign\WebForms\Model\Name',
+        'email' => '\DocuSign\WebForms\Model\Email',
+        'phone_number' => '\DocuSign\WebForms\Model\PhoneNumber'
     ];
 
     /**
@@ -69,8 +71,10 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'created_date_time' => 'date-time'
+        'role_name' => null,
+        'name' => null,
+        'email' => null,
+        'phone_number' => null
     ];
 
     /**
@@ -100,8 +104,10 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'created_date_time' => 'createdDateTime'
+        'role_name' => 'roleName',
+        'name' => 'name',
+        'email' => 'email',
+        'phone_number' => 'phoneNumber'
     ];
 
     /**
@@ -110,8 +116,10 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'created_date_time' => 'setCreatedDateTime'
+        'role_name' => 'setRoleName',
+        'name' => 'setName',
+        'email' => 'setEmail',
+        'phone_number' => 'setPhoneNumber'
     ];
 
     /**
@@ -120,8 +128,10 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'created_date_time' => 'getCreatedDateTime'
+        'role_name' => 'getRoleName',
+        'name' => 'getName',
+        'email' => 'getEmail',
+        'phone_number' => 'getPhoneNumber'
     ];
 
     /**
@@ -184,8 +194,10 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['created_date_time'] = isset($data['created_date_time']) ? $data['created_date_time'] : null;
+        $this->container['role_name'] = isset($data['role_name']) ? $data['role_name'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
     }
 
     /**
@@ -197,6 +209,15 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['role_name'] === null) {
+            $invalidProperties[] = "'role_name' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -213,49 +234,97 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets role_name
      *
-     * @return ?string
+     * @return \DocuSign\WebForms\Model\RoleName
      */
-    public function getId()
+    public function getRoleName()
     {
-        return $this->container['id'];
+        return $this->container['role_name'];
     }
 
     /**
-     * Sets id
+     * Sets role_name
      *
-     * @param ?string $id id
+     * @param \DocuSign\WebForms\Model\RoleName $role_name role_name
      *
      * @return $this
      */
-    public function setId($id)
+    public function setRoleName($role_name)
     {
-        $this->container['id'] = $id;
+        $this->container['role_name'] = $role_name;
 
         return $this;
     }
 
     /**
-     * Gets created_date_time
+     * Gets name
      *
-     * @return ?string
+     * @return \DocuSign\WebForms\Model\Name
      */
-    public function getCreatedDateTime()
+    public function getName()
     {
-        return $this->container['created_date_time'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets created_date_time
+     * Sets name
      *
-     * @param ?string $created_date_time The dateTime when an envelope is created.
+     * @param \DocuSign\WebForms\Model\Name $name name
      *
      * @return $this
      */
-    public function setCreatedDateTime($created_date_time)
+    public function setName($name)
     {
-        $this->container['created_date_time'] = $created_date_time;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return \DocuSign\WebForms\Model\Email
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param \DocuSign\WebForms\Model\Email $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_number
+     *
+     * @return \DocuSign\WebForms\Model\PhoneNumber
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phone_number'];
+    }
+
+    /**
+     * Sets phone_number
+     *
+     * @param \DocuSign\WebForms\Model\PhoneNumber $phone_number phone_number
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phone_number)
+    {
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }

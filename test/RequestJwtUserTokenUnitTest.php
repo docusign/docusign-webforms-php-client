@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class RequestJwtUserTokenUnitTest extends TestCase
 {
-    private static $WEBFORMS_SCOPES = ["signature", "impersonation", "webforms_read", "webforms_write", "webforms_instance_read", "webforms_instance_write", ];
+    private static $WEBFORMS_SCOPES = ["signature", "impersonation", "webforms_read", "webforms_instance_read", "webforms_instance_write", ];
     public function testLogin()
     {
         $testConfig = new TestConfig();
