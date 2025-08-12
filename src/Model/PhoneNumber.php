@@ -1,6 +1,6 @@
 <?php
 /**
- * WebFormInstanceEnvelopes
+ * PhoneNumber
  *
  * PHP version 7.4
  *
@@ -34,15 +34,16 @@ use \ArrayAccess;
 use DocuSign\WebForms\ObjectSerializer;
 
 /**
- * WebFormInstanceEnvelopes Class Doc Comment
+ * PhoneNumber Class Doc Comment
  *
  * @category    Class
+ * @description Phone number of the user.
  * @package     DocuSign\WebForms
  * @author      Swagger Codegen team <apihelp@docusign.com>
  * @license     The Docusign PHP Client SDK is licensed under the MIT License.
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
+class PhoneNumber implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -51,7 +52,7 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'WebFormInstance_envelopes';
+    protected static $swaggerModelName = 'PhoneNumber';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +60,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => '?string',
-        'created_date_time' => '?string'
+        'country_code' => '?string',
+        'national_number' => '?string'
     ];
 
     /**
@@ -69,8 +70,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'created_date_time' => 'date-time'
+        'country_code' => null,
+        'national_number' => null
     ];
 
     /**
@@ -100,8 +101,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'created_date_time' => 'createdDateTime'
+        'country_code' => 'countryCode',
+        'national_number' => 'nationalNumber'
     ];
 
     /**
@@ -110,8 +111,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'created_date_time' => 'setCreatedDateTime'
+        'country_code' => 'setCountryCode',
+        'national_number' => 'setNationalNumber'
     ];
 
     /**
@@ -120,8 +121,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'created_date_time' => 'getCreatedDateTime'
+        'country_code' => 'getCountryCode',
+        'national_number' => 'getNationalNumber'
     ];
 
     /**
@@ -184,8 +185,8 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['created_date_time'] = isset($data['created_date_time']) ? $data['created_date_time'] : null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
+        $this->container['national_number'] = isset($data['national_number']) ? $data['national_number'] : null;
     }
 
     /**
@@ -196,6 +197,14 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['country_code']) && (mb_strlen($this->container['country_code']) > 7)) {
+            $invalidProperties[] = "invalid value for 'country_code', the character length must be smaller than or equal to 7.";
+        }
+
+        if (!is_null($this->container['national_number']) && (mb_strlen($this->container['national_number']) > 15)) {
+            $invalidProperties[] = "invalid value for 'national_number', the character length must be smaller than or equal to 15.";
+        }
 
         return $invalidProperties;
     }
@@ -213,49 +222,57 @@ class WebFormInstanceEnvelopes implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets country_code
      *
      * @return ?string
      */
-    public function getId()
+    public function getCountryCode()
     {
-        return $this->container['id'];
+        return $this->container['country_code'];
     }
 
     /**
-     * Sets id
+     * Sets country_code
      *
-     * @param ?string $id id
+     * @param ?string $country_code country code of the registered phone number.
      *
      * @return $this
      */
-    public function setId($id)
+    public function setCountryCode($country_code)
     {
-        $this->container['id'] = $id;
+        if (!is_null($country_code) && (mb_strlen($country_code) > 7)) {
+            throw new \InvalidArgumentException('invalid length for $country_code when calling PhoneNumber., must be smaller than or equal to 7.');
+        }
+
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }
 
     /**
-     * Gets created_date_time
+     * Gets national_number
      *
      * @return ?string
      */
-    public function getCreatedDateTime()
+    public function getNationalNumber()
     {
-        return $this->container['created_date_time'];
+        return $this->container['national_number'];
     }
 
     /**
-     * Sets created_date_time
+     * Sets national_number
      *
-     * @param ?string $created_date_time The dateTime when an envelope is created.
+     * @param ?string $national_number Phone number of the user (without country code).
      *
      * @return $this
      */
-    public function setCreatedDateTime($created_date_time)
+    public function setNationalNumber($national_number)
     {
-        $this->container['created_date_time'] = $created_date_time;
+        if (!is_null($national_number) && (mb_strlen($national_number) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $national_number when calling PhoneNumber., must be smaller than or equal to 15.');
+        }
+
+        $this->container['national_number'] = $national_number;
 
         return $this;
     }

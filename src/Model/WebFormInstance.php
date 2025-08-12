@@ -71,7 +71,8 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'status' => '\DocuSign\WebForms\Model\InstanceStatus',
         'envelopes' => '\DocuSign\WebForms\Model\WebFormInstanceEnvelopes[]',
         'instance_metadata' => '\DocuSign\WebForms\Model\WebFormInstanceMetadata',
-        'form_values' => '\DocuSign\WebForms\Model\WebFormValues'
+        'form_values' => '\DocuSign\WebForms\Model\WebFormValues',
+        'recipients' => '\DocuSign\WebForms\Model\WebFormInstanceRecipients[]'
     ];
 
     /**
@@ -91,7 +92,8 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'status' => null,
         'envelopes' => null,
         'instance_metadata' => null,
-        'form_values' => null
+        'form_values' => null,
+        'recipients' => null
     ];
 
     /**
@@ -132,7 +134,8 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'status' => 'status',
         'envelopes' => 'envelopes',
         'instance_metadata' => 'instanceMetadata',
-        'form_values' => 'formValues'
+        'form_values' => 'formValues',
+        'recipients' => 'recipients'
     ];
 
     /**
@@ -152,7 +155,8 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'status' => 'setStatus',
         'envelopes' => 'setEnvelopes',
         'instance_metadata' => 'setInstanceMetadata',
-        'form_values' => 'setFormValues'
+        'form_values' => 'setFormValues',
+        'recipients' => 'setRecipients'
     ];
 
     /**
@@ -172,7 +176,8 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'status' => 'getStatus',
         'envelopes' => 'getEnvelopes',
         'instance_metadata' => 'getInstanceMetadata',
-        'form_values' => 'getFormValues'
+        'form_values' => 'getFormValues',
+        'recipients' => 'getRecipients'
     ];
 
     /**
@@ -247,6 +252,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         $this->container['envelopes'] = isset($data['envelopes']) ? $data['envelopes'] : null;
         $this->container['instance_metadata'] = isset($data['instance_metadata']) ? $data['instance_metadata'] : null;
         $this->container['form_values'] = isset($data['form_values']) ? $data['form_values'] : null;
+        $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
     }
 
     /**
@@ -560,6 +566,30 @@ class WebFormInstance implements ModelInterface, ArrayAccess
     public function setFormValues($form_values)
     {
         $this->container['form_values'] = $form_values;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipients
+     *
+     * @return \DocuSign\WebForms\Model\WebFormInstanceRecipients[]
+     */
+    public function getRecipients()
+    {
+        return $this->container['recipients'];
+    }
+
+    /**
+     * Sets recipients
+     *
+     * @param \DocuSign\WebForms\Model\WebFormInstanceRecipients[] $recipients The associated envelope that is created when the instance is submitted
+     *
+     * @return $this
+     */
+    public function setRecipients($recipients)
+    {
+        $this->container['recipients'] = $recipients;
 
         return $this;
     }

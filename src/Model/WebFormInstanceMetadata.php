@@ -64,7 +64,9 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
         'created_date_time' => '?string',
         'created_by' => '\DocuSign\WebForms\Model\WebFormUserInfo',
         'last_modified_date_time' => '?string',
-        'last_modified_by' => '\DocuSign\WebForms\Model\WebFormUserInfo'
+        'last_modified_by' => '\DocuSign\WebForms\Model\WebFormUserInfo',
+        'submitted_date_time' => '\DocuSign\WebForms\Model\SubmittedDateTime',
+        'instance_source' => '\DocuSign\WebForms\Model\InstanceSource'
     ];
 
     /**
@@ -77,7 +79,9 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
         'created_date_time' => null,
         'created_by' => null,
         'last_modified_date_time' => null,
-        'last_modified_by' => null
+        'last_modified_by' => null,
+        'submitted_date_time' => null,
+        'instance_source' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
         'created_date_time' => 'createdDateTime',
         'created_by' => 'createdBy',
         'last_modified_date_time' => 'lastModifiedDateTime',
-        'last_modified_by' => 'lastModifiedBy'
+        'last_modified_by' => 'lastModifiedBy',
+        'submitted_date_time' => 'submittedDateTime',
+        'instance_source' => 'instanceSource'
     ];
 
     /**
@@ -124,7 +130,9 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
         'created_date_time' => 'setCreatedDateTime',
         'created_by' => 'setCreatedBy',
         'last_modified_date_time' => 'setLastModifiedDateTime',
-        'last_modified_by' => 'setLastModifiedBy'
+        'last_modified_by' => 'setLastModifiedBy',
+        'submitted_date_time' => 'setSubmittedDateTime',
+        'instance_source' => 'setInstanceSource'
     ];
 
     /**
@@ -137,7 +145,9 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
         'created_date_time' => 'getCreatedDateTime',
         'created_by' => 'getCreatedBy',
         'last_modified_date_time' => 'getLastModifiedDateTime',
-        'last_modified_by' => 'getLastModifiedBy'
+        'last_modified_by' => 'getLastModifiedBy',
+        'submitted_date_time' => 'getSubmittedDateTime',
+        'instance_source' => 'getInstanceSource'
     ];
 
     /**
@@ -205,6 +215,8 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
         $this->container['created_by'] = isset($data['created_by']) ? $data['created_by'] : null;
         $this->container['last_modified_date_time'] = isset($data['last_modified_date_time']) ? $data['last_modified_date_time'] : null;
         $this->container['last_modified_by'] = isset($data['last_modified_by']) ? $data['last_modified_by'] : null;
+        $this->container['submitted_date_time'] = isset($data['submitted_date_time']) ? $data['submitted_date_time'] : null;
+        $this->container['instance_source'] = isset($data['instance_source']) ? $data['instance_source'] : null;
     }
 
     /**
@@ -356,6 +368,54 @@ class WebFormInstanceMetadata implements ModelInterface, ArrayAccess
     public function setLastModifiedBy($last_modified_by)
     {
         $this->container['last_modified_by'] = $last_modified_by;
+
+        return $this;
+    }
+
+    /**
+     * Gets submitted_date_time
+     *
+     * @return \DocuSign\WebForms\Model\SubmittedDateTime
+     */
+    public function getSubmittedDateTime()
+    {
+        return $this->container['submitted_date_time'];
+    }
+
+    /**
+     * Sets submitted_date_time
+     *
+     * @param \DocuSign\WebForms\Model\SubmittedDateTime $submitted_date_time submitted_date_time
+     *
+     * @return $this
+     */
+    public function setSubmittedDateTime($submitted_date_time)
+    {
+        $this->container['submitted_date_time'] = $submitted_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets instance_source
+     *
+     * @return \DocuSign\WebForms\Model\InstanceSource
+     */
+    public function getInstanceSource()
+    {
+        return $this->container['instance_source'];
+    }
+
+    /**
+     * Sets instance_source
+     *
+     * @param \DocuSign\WebForms\Model\InstanceSource $instance_source instance_source
+     *
+     * @return $this
+     */
+    public function setInstanceSource($instance_source)
+    {
+        $this->container['instance_source'] = $instance_source;
 
         return $this;
     }

@@ -68,6 +68,8 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'security_domain' => '?string',
         'return_url' => '?string',
         'expiration_offset' => 'int',
+        'send_option' => '\DocuSign\WebForms\Model\SendOption',
+        'recipients' => '\DocuSign\WebForms\Model\CreateInstanceRequestBodyRecipients[]',
         'tags' => '?string[]'
     ];
 
@@ -85,6 +87,8 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'security_domain' => null,
         'return_url' => null,
         'expiration_offset' => null,
+        'send_option' => null,
+        'recipients' => null,
         'tags' => null
     ];
 
@@ -123,6 +127,8 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'security_domain' => 'securityDomain',
         'return_url' => 'returnUrl',
         'expiration_offset' => 'expirationOffset',
+        'send_option' => 'sendOption',
+        'recipients' => 'recipients',
         'tags' => 'tags'
     ];
 
@@ -140,6 +146,8 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'security_domain' => 'setSecurityDomain',
         'return_url' => 'setReturnUrl',
         'expiration_offset' => 'setExpirationOffset',
+        'send_option' => 'setSendOption',
+        'recipients' => 'setRecipients',
         'tags' => 'setTags'
     ];
 
@@ -157,6 +165,8 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'security_domain' => 'getSecurityDomain',
         'return_url' => 'getReturnUrl',
         'expiration_offset' => 'getExpirationOffset',
+        'send_option' => 'getSendOption',
+        'recipients' => 'getRecipients',
         'tags' => 'getTags'
     ];
 
@@ -228,6 +238,8 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         $this->container['security_domain'] = isset($data['security_domain']) ? $data['security_domain'] : null;
         $this->container['return_url'] = isset($data['return_url']) ? $data['return_url'] : null;
         $this->container['expiration_offset'] = isset($data['expiration_offset']) ? $data['expiration_offset'] : null;
+        $this->container['send_option'] = isset($data['send_option']) ? $data['send_option'] : null;
+        $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
     }
 
@@ -240,9 +252,6 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['client_user_id'] === null) {
-            $invalidProperties[] = "'client_user_id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -446,6 +455,54 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     public function setExpirationOffset($expiration_offset)
     {
         $this->container['expiration_offset'] = $expiration_offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets send_option
+     *
+     * @return \DocuSign\WebForms\Model\SendOption
+     */
+    public function getSendOption()
+    {
+        return $this->container['send_option'];
+    }
+
+    /**
+     * Sets send_option
+     *
+     * @param \DocuSign\WebForms\Model\SendOption $send_option send_option
+     *
+     * @return $this
+     */
+    public function setSendOption($send_option)
+    {
+        $this->container['send_option'] = $send_option;
+
+        return $this;
+    }
+
+    /**
+     * Gets recipients
+     *
+     * @return \DocuSign\WebForms\Model\CreateInstanceRequestBodyRecipients[]
+     */
+    public function getRecipients()
+    {
+        return $this->container['recipients'];
+    }
+
+    /**
+     * Sets recipients
+     *
+     * @param \DocuSign\WebForms\Model\CreateInstanceRequestBodyRecipients[] $recipients The recipients who will receive the form in email
+     *
+     * @return $this
+     */
+    public function setRecipients($recipients)
+    {
+        $this->container['recipients'] = $recipients;
 
         return $this;
     }
