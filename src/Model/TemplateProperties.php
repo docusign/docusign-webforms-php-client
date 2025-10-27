@@ -193,7 +193,7 @@ class TemplateProperties implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['original_template_id'] = isset($data['original_template_id']) ? $data['original_template_id'] : null;
         $this->container['cloned_template_id'] = isset($data['cloned_template_id']) ? $data['cloned_template_id'] : null;

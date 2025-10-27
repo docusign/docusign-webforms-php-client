@@ -1,3 +1,8 @@
+## [v2.1.1] - WebForms API v1.1.0-1.0.6 - 2025-10-27
+### Changed
+- Added explicit nullable type hints (?Type) to parameters that accept null, improving type safety and consistency.
+- Updated the SDK release version.
+  
 ## [v2.1.0] - WebForms API v1.1.0-1.0.5 - 2025-07-15
 ### Changed
 - Added support for version v1.1.0-1.0.5 of the DocuSign WebForms API.
