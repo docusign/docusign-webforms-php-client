@@ -71,7 +71,8 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'status' => '\DocuSign\WebForms\Model\InstanceStatus',
         'envelopes' => '\DocuSign\WebForms\Model\WebFormInstanceEnvelopes[]',
         'instance_metadata' => '\DocuSign\WebForms\Model\WebFormInstanceMetadata',
-        'form_values' => '\DocuSign\WebForms\Model\WebFormValues',
+        'form_values' => 'map[string,object]',
+        'brand_id' => '?string',
         'recipients' => '\DocuSign\WebForms\Model\WebFormInstanceRecipients[]'
     ];
 
@@ -93,6 +94,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'envelopes' => null,
         'instance_metadata' => null,
         'form_values' => null,
+        'brand_id' => null,
         'recipients' => null
     ];
 
@@ -135,6 +137,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'envelopes' => 'envelopes',
         'instance_metadata' => 'instanceMetadata',
         'form_values' => 'formValues',
+        'brand_id' => 'brandId',
         'recipients' => 'recipients'
     ];
 
@@ -156,6 +159,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'envelopes' => 'setEnvelopes',
         'instance_metadata' => 'setInstanceMetadata',
         'form_values' => 'setFormValues',
+        'brand_id' => 'setBrandId',
         'recipients' => 'setRecipients'
     ];
 
@@ -177,6 +181,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         'envelopes' => 'getEnvelopes',
         'instance_metadata' => 'getInstanceMetadata',
         'form_values' => 'getFormValues',
+        'brand_id' => 'getBrandId',
         'recipients' => 'getRecipients'
     ];
 
@@ -238,7 +243,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['form_url'] = isset($data['form_url']) ? $data['form_url'] : null;
         $this->container['instance_token'] = isset($data['instance_token']) ? $data['instance_token'] : null;
@@ -252,6 +257,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
         $this->container['envelopes'] = isset($data['envelopes']) ? $data['envelopes'] : null;
         $this->container['instance_metadata'] = isset($data['instance_metadata']) ? $data['instance_metadata'] : null;
         $this->container['form_values'] = isset($data['form_values']) ? $data['form_values'] : null;
+        $this->container['brand_id'] = isset($data['brand_id']) ? $data['brand_id'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
     }
 
@@ -549,7 +555,7 @@ class WebFormInstance implements ModelInterface, ArrayAccess
     /**
      * Gets form_values
      *
-     * @return \DocuSign\WebForms\Model\WebFormValues
+     * @return map[string,object]
      */
     public function getFormValues()
     {
@@ -559,13 +565,37 @@ class WebFormInstance implements ModelInterface, ArrayAccess
     /**
      * Sets form_values
      *
-     * @param \DocuSign\WebForms\Model\WebFormValues $form_values form_values
+     * @param map[string,object] $form_values Key-value pairs (where key is the component name and value is the form value) used to create a form instance. For key of type TextBox, Email, Date, Select and RadioButtonGroup the value is of string type. For key of type Number, the value is of number type. For key of type of CheckboxGroup, the value is of type array of string.
      *
      * @return $this
      */
     public function setFormValues($form_values)
     {
         $this->container['form_values'] = $form_values;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_id
+     *
+     * @return ?string
+     */
+    public function getBrandId()
+    {
+        return $this->container['brand_id'];
+    }
+
+    /**
+     * Sets brand_id
+     *
+     * @param ?string $brand_id brand_id
+     *
+     * @return $this
+     */
+    public function setBrandId($brand_id)
+    {
+        $this->container['brand_id'] = $brand_id;
 
         return $this;
     }

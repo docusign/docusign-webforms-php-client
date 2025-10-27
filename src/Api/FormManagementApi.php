@@ -310,7 +310,7 @@ class FormManagementApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -369,7 +369,7 @@ class FormManagementApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\WebForms\Model\WebForm
      */
-    public function getForm($account_id, $form_id, \DocuSign\WebForms\Api\FormManagementApi\GetFormOptions $options = null)
+    public function getForm($account_id, $form_id, ?\DocuSign\WebForms\Api\FormManagementApi\GetFormOptions $options = null)
     {
         list($response) = $this->getFormWithHttpInfo($account_id, $form_id, $options);
         return $response;
@@ -387,7 +387,7 @@ class FormManagementApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\WebForms\Model\WebForm, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFormWithHttpInfo($account_id, $form_id, \DocuSign\WebForms\Api\FormManagementApi\GetFormOptions $options = null): array
+    public function getFormWithHttpInfo($account_id, $form_id, ?\DocuSign\WebForms\Api\FormManagementApi\GetFormOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
@@ -486,7 +486,7 @@ class FormManagementApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\WebForms\Model\WebFormSummaryList
      */
-    public function listForms($account_id, \DocuSign\WebForms\Api\FormManagementApi\ListFormsOptions $options = null)
+    public function listForms($account_id, ?\DocuSign\WebForms\Api\FormManagementApi\ListFormsOptions $options = null)
     {
         list($response) = $this->listFormsWithHttpInfo($account_id, $options);
         return $response;
@@ -503,7 +503,7 @@ class FormManagementApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\WebForms\Model\WebFormSummaryList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listFormsWithHttpInfo($account_id, \DocuSign\WebForms\Api\FormManagementApi\ListFormsOptions $options = null): array
+    public function listFormsWithHttpInfo($account_id, ?\DocuSign\WebForms\Api\FormManagementApi\ListFormsOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {

@@ -60,7 +60,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'form_values' => '\DocuSign\WebForms\Model\WebFormValues',
+        'form_values' => 'map[string,object]',
         'client_user_id' => '?string',
         'authentication_instant' => '?string',
         'authentication_method' => '\DocuSign\WebForms\Model\AuthenticationMethod',
@@ -69,6 +69,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'return_url' => '?string',
         'expiration_offset' => 'int',
         'send_option' => '\DocuSign\WebForms\Model\SendOption',
+        'brand_id' => '?string',
         'recipients' => '\DocuSign\WebForms\Model\CreateInstanceRequestBodyRecipients[]',
         'tags' => '?string[]'
     ];
@@ -88,6 +89,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'return_url' => null,
         'expiration_offset' => null,
         'send_option' => null,
+        'brand_id' => null,
         'recipients' => null,
         'tags' => null
     ];
@@ -128,6 +130,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'return_url' => 'returnUrl',
         'expiration_offset' => 'expirationOffset',
         'send_option' => 'sendOption',
+        'brand_id' => 'brandId',
         'recipients' => 'recipients',
         'tags' => 'tags'
     ];
@@ -147,6 +150,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'return_url' => 'setReturnUrl',
         'expiration_offset' => 'setExpirationOffset',
         'send_option' => 'setSendOption',
+        'brand_id' => 'setBrandId',
         'recipients' => 'setRecipients',
         'tags' => 'setTags'
     ];
@@ -166,6 +170,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         'return_url' => 'getReturnUrl',
         'expiration_offset' => 'getExpirationOffset',
         'send_option' => 'getSendOption',
+        'brand_id' => 'getBrandId',
         'recipients' => 'getRecipients',
         'tags' => 'getTags'
     ];
@@ -228,7 +233,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['form_values'] = isset($data['form_values']) ? $data['form_values'] : null;
         $this->container['client_user_id'] = isset($data['client_user_id']) ? $data['client_user_id'] : null;
@@ -239,6 +244,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
         $this->container['return_url'] = isset($data['return_url']) ? $data['return_url'] : null;
         $this->container['expiration_offset'] = isset($data['expiration_offset']) ? $data['expiration_offset'] : null;
         $this->container['send_option'] = isset($data['send_option']) ? $data['send_option'] : null;
+        $this->container['brand_id'] = isset($data['brand_id']) ? $data['brand_id'] : null;
         $this->container['recipients'] = isset($data['recipients']) ? $data['recipients'] : null;
         $this->container['tags'] = isset($data['tags']) ? $data['tags'] : null;
     }
@@ -270,7 +276,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     /**
      * Gets form_values
      *
-     * @return \DocuSign\WebForms\Model\WebFormValues
+     * @return map[string,object]
      */
     public function getFormValues()
     {
@@ -280,7 +286,7 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     /**
      * Sets form_values
      *
-     * @param \DocuSign\WebForms\Model\WebFormValues $form_values form_values
+     * @param map[string,object] $form_values Key-value pairs (where key is the component name and value is the form value) used to create a form instance. For key of type TextBox, Email, Date, Select and RadioButtonGroup the value is of string type. For key of type Number, the value is of number type. For key of type of CheckboxGroup, the value is of type array of string.
      *
      * @return $this
      */
@@ -479,6 +485,30 @@ class CreateInstanceRequestBody implements ModelInterface, ArrayAccess
     public function setSendOption($send_option)
     {
         $this->container['send_option'] = $send_option;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_id
+     *
+     * @return ?string
+     */
+    public function getBrandId()
+    {
+        return $this->container['brand_id'];
+    }
+
+    /**
+     * Sets brand_id
+     *
+     * @param ?string $brand_id brand_id
+     *
+     * @return $this
+     */
+    public function setBrandId($brand_id)
+    {
+        $this->container['brand_id'] = $brand_id;
 
         return $this;
     }

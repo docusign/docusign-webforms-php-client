@@ -60,7 +60,8 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'recipient_view_id' => '\DocuSign\WebForms\Model\RecipientViewId',
-        'instance_recipient_status' => '\DocuSign\WebForms\Model\InstanceRecipientStatus'
+        'instance_recipient_status' => '\DocuSign\WebForms\Model\InstanceRecipientStatus',
+        'role_name' => '\DocuSign\WebForms\Model\RoleName'
     ];
 
     /**
@@ -70,7 +71,8 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'recipient_view_id' => null,
-        'instance_recipient_status' => null
+        'instance_recipient_status' => null,
+        'role_name' => null
     ];
 
     /**
@@ -101,7 +103,8 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'recipient_view_id' => 'recipientViewId',
-        'instance_recipient_status' => 'instanceRecipientStatus'
+        'instance_recipient_status' => 'instanceRecipientStatus',
+        'role_name' => 'roleName'
     ];
 
     /**
@@ -111,7 +114,8 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'recipient_view_id' => 'setRecipientViewId',
-        'instance_recipient_status' => 'setInstanceRecipientStatus'
+        'instance_recipient_status' => 'setInstanceRecipientStatus',
+        'role_name' => 'setRoleName'
     ];
 
     /**
@@ -121,7 +125,8 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'recipient_view_id' => 'getRecipientViewId',
-        'instance_recipient_status' => 'getInstanceRecipientStatus'
+        'instance_recipient_status' => 'getInstanceRecipientStatus',
+        'role_name' => 'getRoleName'
     ];
 
     /**
@@ -182,10 +187,11 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['recipient_view_id'] = isset($data['recipient_view_id']) ? $data['recipient_view_id'] : null;
         $this->container['instance_recipient_status'] = isset($data['instance_recipient_status']) ? $data['instance_recipient_status'] : null;
+        $this->container['role_name'] = isset($data['role_name']) ? $data['role_name'] : null;
     }
 
     /**
@@ -256,6 +262,30 @@ class WebFormInstanceRecipients implements ModelInterface, ArrayAccess
     public function setInstanceRecipientStatus($instance_recipient_status)
     {
         $this->container['instance_recipient_status'] = $instance_recipient_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets role_name
+     *
+     * @return \DocuSign\WebForms\Model\RoleName
+     */
+    public function getRoleName()
+    {
+        return $this->container['role_name'];
+    }
+
+    /**
+     * Sets role_name
+     *
+     * @param \DocuSign\WebForms\Model\RoleName $role_name role_name
+     *
+     * @return $this
+     */
+    public function setRoleName($role_name)
+    {
+        $this->container['role_name'] = $role_name;
 
         return $this;
     }

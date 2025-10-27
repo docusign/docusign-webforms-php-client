@@ -107,7 +107,7 @@ class FormInstanceManagementApi
      *
      * @return void
      */
-    public function __construct(ApiClient $apiClient = null)
+    public function __construct(?ApiClient $apiClient = null)
     {
         $this->apiClient = $apiClient ?? new ApiClient();
     }
@@ -417,7 +417,7 @@ class FormInstanceManagementApi
      * @throws ApiException on non-2xx response
      * @return \DocuSign\WebForms\Model\WebFormInstanceList
      */
-    public function listInstances($account_id, $form_id, \DocuSign\WebForms\Api\FormInstanceManagementApi\ListInstancesOptions $options = null)
+    public function listInstances($account_id, $form_id, ?\DocuSign\WebForms\Api\FormInstanceManagementApi\ListInstancesOptions $options = null)
     {
         list($response) = $this->listInstancesWithHttpInfo($account_id, $form_id, $options);
         return $response;
@@ -435,7 +435,7 @@ class FormInstanceManagementApi
      * @throws ApiException on non-2xx response
      * @return array of \DocuSign\WebForms\Model\WebFormInstanceList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listInstancesWithHttpInfo($account_id, $form_id, \DocuSign\WebForms\Api\FormInstanceManagementApi\ListInstancesOptions $options = null): array
+    public function listInstancesWithHttpInfo($account_id, $form_id, ?\DocuSign\WebForms\Api\FormInstanceManagementApi\ListInstancesOptions $options = null): array
     {
         // verify the required parameter 'account_id' is set
         if ($account_id === null) {
