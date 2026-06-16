@@ -1,3 +1,7 @@
+## [v2.1.2] - WebForms API v1.1.0-1.0.6 - 2026-06-16
+### Changed
+- Replaced JWT dependency: Switched from firebase/php-jwt (^6.0) to adhocore/jwt (^1.1) in composer.json template.
+- Updated JWT import namespace: Changed use Firebase\JWT\JWT to use Ahc\Jwt\JWT in ApiClient.
 ## [v2.1.1] - WebForms API v1.1.0-1.0.6 - 2025-10-27
 ### Changed
 - Added explicit nullable type hints (?Type) to parameters that accept null, improving type safety and consistency.
