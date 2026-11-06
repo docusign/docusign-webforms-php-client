@@ -3,11 +3,16 @@
 [![Build status][travis-image]][travis-url]
 
 ## Requirements
-*   PHP 7.4+
+*   A PHP release patched for PHP2Shell (CVE-2026-109618 / CVE-2026-109619). The supported versions are:
+    *   PHP 8.2.35 or any later 8.2 release
+    *   PHP 8.3.36 or any later 8.3 release
+    *   PHP 8.4.27 or any later 8.4 release
+    *   PHP 8.5.12 or later
 *   Free [developer account](https://go.docusign.com/sandbox/productshot/?elqCampaignId=16531)
 
 ## Compatibility
-*   PHP 7.4+
+*   PHP `~8.2.35 || ~8.3.36 || ~8.4.27 || >=8.5.12`. PHP 7.4, 8.0 and 8.1 are not supported. See the [PHP security advisory](https://www.php.net/archive/2026.php#2026-10-21-5).
+*   If your Linux distribution has backported the fix but reports an older version number, install with `composer install --ignore-platform-req=php`, and only after confirming that your PHP build includes the fix.
 
 ## Installation
 This SDK is provided as open source, which enables you to customize its functionality to suit your particular use case. To do so, download or clone the repository. If the SDK’s given functionality meets your integration needs, or if you’re working through our [code examples](https://developers.docusign.com/docs/webforms-rest-api/how-to/) from the [DocuSign Developer Center](https://developers.docusign.com/), you merely need to install it by following the instructions below.
@@ -37,6 +42,8 @@ This SDK is provided as open source, which enables you to customize its function
 This client has the following external dependencies:
 *   [PHP cURL extension](https://www.php.net/manual/en/intro.curl.php)
 *   [PHP JSON extension](https://php.net/manual/en/book.json.php)
+*   [PHP mbstring extension](https://www.php.net/manual/en/book.mbstring.php)
+*   [firebase/php-jwt](https://github.com/firebase/php-jwt) (^7.0), used for JWT Grant authentication. JWT Grant requires an RSA private key of at least 2048 bits.
 
 ## Code examples
 You can find on our GitHub a self-executing package of code examples for the WebForms PHP SDK, called a [Launcher](https://github.com/docusign/code-examples-php/blob/master/README.md), that demonstrates common use cases. You can also download a version preconfigured for your DocuSign developer account from [Quickstart](https://developers.docusign.com/docs/webforms-rest-api/quickstart/). These examples can use either the [Authorization Code Grant](https://developers.docusign.com/webforms-rest-api/guides/authentication/oauth2-code-grant) or [JSON Web Token (JWT)](https://developers.docusign.com/webforms-rest-api/guides/authentication/oauth2-jsonwebtoken) authentication workflows.
